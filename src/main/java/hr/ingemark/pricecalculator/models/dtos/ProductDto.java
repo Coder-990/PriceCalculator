@@ -9,7 +9,7 @@ import java.util.UUID;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class ProductDto {
 
     private long id;
     private UUID code;
