@@ -2,8 +2,6 @@ package hr.ingemark.pricecalculator.models.dtos;
 
 import lombok.*;
 
-import java.util.UUID;
-
 @Data
 @Builder
 @ToString
@@ -12,10 +10,10 @@ import java.util.UUID;
 public class ProductDto {
 
     private long id;
-    private UUID code;
+    private String code;
     private String name;
     private String priceEur;
     private String priceUsd;
     private String description;
-    private boolean isAvailable;
+    private Boolean isAvailable;
 }

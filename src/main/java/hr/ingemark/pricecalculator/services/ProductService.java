@@ -10,15 +10,19 @@ import java.util.List;
 public interface ProductService {
     List<Product> getAllProducts();
 
+    Product getOneById(Long id);
+
+    Product getOneByCode(String code);
+
     Product createProduct(Product product);
 
     Product updateExistingProduct(Product productValue, Long id);
 
     HttpStatus deleteById(Long id);
 
-    ResponseEntity<ProductDto> getPersonDTOResponseEntity(Product person);
+    ResponseEntity<ProductDto> getProductDTOResponseEntity(Product person);
 
-    ResponseEntity<ProductDto> savePersonDTOResponseEntity(Product person);
+    ResponseEntity<ProductDto> saveProductDTOResponseEntity(Product person);
 
     Product convertToEntity(ProductDto productDto);
 

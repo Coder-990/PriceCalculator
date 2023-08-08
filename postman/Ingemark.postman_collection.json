@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "33984a0e-1502-4f63-80e2-203ac55e2e35",
+		"name": "Ingemark",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15839436"
+	},
+	"item": [
+		{
+			"name": "getByCode",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"code\": \"42h5z2h5jhh\",\r\n\"name\": \"Stalak PVC\",\r\n\"priceEur\": \"19.25\",\r\n\"priceUsd\": \"18.75\",\r\n\"description\": \"Stalak za CD\",\r\n\"isAvailable\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products/?code=42h5z2h5jhh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "42h5z2h5jhh"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getByCode",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"42h5z2h5jhh\",\r\n\"name\": \"Stalak PVC\",\r\n\"priceEur\": \"19.25\",\r\n\"priceUsd\": \"18.75\",\r\n\"description\": \"Stalak za CD\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/?code=42h5z2h5jhh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "42h5z2h5jhh"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 13:45:41 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"code\": \"42h5z2h5jhh\",\n    \"name\": \"Stalak PVC\",\n    \"priceEur\": \"19.25\",\n    \"priceUsd\": \"18.75\",\n    \"description\": \"Stalak za CD\",\n    \"isAvailable\": true\n}"
+				},
+				{
+					"name": "getByCode",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"42h5z2h5jhh\",\r\n\"name\": \"Stalak PVC\",\r\n\"priceEur\": \"19.25\",\r\n\"priceUsd\": \"18.75\",\r\n\"description\": \"Stalak za CD\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/?code=123edfrt56",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "123edfrt56"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 19:41:53 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"code\": \"123edfrt56\",\n    \"name\": \"FirstProduct\",\n    \"priceEur\": \"19.99\",\n    \"priceUsd\": \"21.99\",\n    \"description\": \"TestProduct\",\n    \"isAvailable\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "getAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"code\": \"42h5z2h5jhh\",\r\n\"name\": \"Stalak PVC\",\r\n\"priceEur\": \"19.25\",\r\n\"priceUsd\": \"18.75\",\r\n\"description\": \"Stalak za CD\",\r\n\"isAvailable\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"get"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAll",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"42h5z2h5jhh\",\r\n\"name\": \"Stalak PVC\",\r\n\"priceEur\": \"19.25\",\r\n\"priceUsd\": \"18.75\",\r\n\"description\": \"Stalak za CD\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"get"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 19:40:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"code\": \"123edfrt56\",\n        \"name\": \"FirstProduct\",\n        \"priceEur\": \"19.99\",\n        \"priceUsd\": \"21.99\",\n        \"description\": \"TestProduct\",\n        \"isAvailable\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"code\": \"42h5z2h5jhh\",\r\n\"name\": \"Stalak PVC\",\r\n\"priceEur\": \"19.25\",\r\n\"priceUsd\": \"18.75\",\r\n\"description\": \"Stalak za CD\",\r\n\"isAvailable\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products/getBy/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"getBy",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"42h5z2h5jhh\",\r\n\"name\": \"Stalak PVC\",\r\n\"priceEur\": \"19.25\",\r\n\"priceUsd\": \"18.75\",\r\n\"description\": \"Stalak za CD\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/getBy/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"getBy",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 14:22:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"code\": \"4g4t4h5d4fv\",\n    \"name\": \"Laptop HP Pavilion\",\n    \"priceEur\": \"299.25\",\n    \"priceUsd\": \"285.75\",\n    \"description\": \"Gaming Laptop, a mze i za posao\",\n    \"isAvailable\": true\n}"
+				},
+				{
+					"name": "getById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"42h5z2h5jhh\",\r\n\"name\": \"Stalak PVC\",\r\n\"priceEur\": \"19.25\",\r\n\"priceUsd\": \"18.75\",\r\n\"description\": \"Stalak za CD\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/getBy/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"getBy",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 19:42:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"code\": \"123edfrt56\",\n    \"name\": \"FirstProduct\",\n    \"priceEur\": \"19.99\",\n    \"priceUsd\": \"21.99\",\n    \"description\": \"TestProduct\",\n    \"isAvailable\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"code\": \"123edfrt56\",\r\n\"name\": \"FirstProduct\",\r\n\"priceEur\": \"19.99\",\r\n\"priceUsd\": \"\",\r\n\"description\": \"TestProduct\",\r\n\"isAvailable\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "newProduct",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"1g4f5c1d2t\",\r\n\"name\": \"Monitor LG WQ650\",\r\n\"priceEur\": \"299.25\",\r\n\"priceUsd\": \"285.75\",\r\n\"description\": \"Gaming Laptop, a mze i za posao\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 14:12:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"code\": \"1g4f5c1d2t\",\n    \"name\": \"Monitor LG WQ650\",\n    \"priceEur\": \"299.25\",\n    \"priceUsd\": \"285.75\",\n    \"description\": \"Gaming Laptop, a mze i za posao\",\n    \"isAvailable\": true\n}"
+				},
+				{
+					"name": "Create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"123edfrt56\",\r\n\"name\": \"FirstProduct\",\r\n\"priceEur\": \"19.99\",\r\n\"priceUsd\": \"\",\r\n\"description\": \"TestProduct\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 19:39:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"code\": \"123edfrt56\",\n    \"name\": \"FirstProduct\",\n    \"priceEur\": \"19.99\",\n    \"priceUsd\": \"21.989000\",\n    \"description\": \"TestProduct\",\n    \"isAvailable\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"code\": \"123edfrt56\",\r\n\"name\": \"Laptop HP Pavilion\",\r\n\"priceEur\": \"299.25\",\r\n\"priceUsd\": \"285.75\",\r\n\"description\": \"Gaming Laptop, a mze i za posao\",\r\n\"isAvailable\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products/updateBy/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"updateBy",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updateById",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"4g4t4h5d4fv\",\r\n\"name\": \"Laptop HP Pavilion\",\r\n\"priceEur\": \"299.25\",\r\n\"priceUsd\": \"285.75\",\r\n\"description\": \"Gaming Laptop, a mze i za posao\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/updateBy/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"updateBy",
+								"3"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 14:19:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"code\": \"4g4t4h5d4fv\",\n    \"name\": \"Laptop HP Pavilion\",\n    \"priceEur\": \"299.25\",\n    \"priceUsd\": \"285.75\",\n    \"description\": \"Gaming Laptop, a mze i za posao\",\n    \"isAvailable\": true\n}"
+				},
+				{
+					"name": "Update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"code\": \"123edfrt56\",\r\n\"name\": \"Laptop HP Pavilion\",\r\n\"priceEur\": \"299.25\",\r\n\"priceUsd\": \"285.75\",\r\n\"description\": \"Gaming Laptop, a mze i za posao\",\r\n\"isAvailable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/updateBy/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"updateBy",
+								"1"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 19:42:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"code\": \"123edfrt56\",\n    \"name\": \"Laptop HP Pavilion\",\n    \"priceEur\": \"299.25\",\n    \"priceUsd\": \"329.175000\",\n    \"description\": \"Gaming Laptop, a mze i za posao\",\n    \"isAvailable\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products/deleteBy/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"deleteBy",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "deleteById",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/deleteBy/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"deleteBy",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Aug 2023 14:24:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "\"NO_CONTENT\""
+				}
+			]
+		}
+	]
+}

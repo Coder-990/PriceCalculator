@@ -1,11 +1,11 @@
 package hr.ingemark.pricecalculator.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -16,14 +16,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Size(min = 10)
-    @Size(max = 10)
     @Basic
     @Column(name = "CODE")
     private String code;
@@ -32,15 +31,13 @@ public class Product implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @Min(value = 0)
     @Basic
     @Column(name = "PRICE_EUR")
-    private String priceEur;
+    private BigDecimal priceEur;
 
-    @Min(value = 0)
     @Basic
     @Column(name = "PRICE_USD")
-    private String priceUsd;
+    private BigDecimal priceUsd;
 
     @Basic
     @Column(name = "DESCRIPTION")
@@ -48,5 +45,5 @@ public class Product implements Serializable {
 
     @Basic
     @Column(name = "IS_AVAILABLE")
-    private boolean isAvailable;
+    private Boolean isAvailable;
 }
