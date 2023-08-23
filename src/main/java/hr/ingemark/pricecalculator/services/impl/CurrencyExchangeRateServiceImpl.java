@@ -9,13 +9,23 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Arrays;
 
+import static hr.ingemark.pricecalculator.util.Constants.HNB_USD_CURRENCY;
+import static hr.ingemark.pricecalculator.util.Constants.SAD;
+
 @Service
 @RequiredArgsConstructor
 public class CurrencyExchangeRateServiceImpl implements CurrencyExchangeRateService {
-    public static final String SAD = "SAD";
-    public static final String HNB_USD_CURRENCY = "https://api.hnb.hr/tecajn-eur/v3?valuta=USD";
 
     private final WebClient.Builder webClientBuilder;
+
+    @Override
+    public String getUsdBuyingRate() {
+        return Arrays.stream(this.buildWebClient())
+                .filter(cER -> cER.getDrzava().equals(SAD))
+                .map(CurrencyExchangeRate::getKupovni_tecaj)
+                .findFirst()
+                .orElseThrow(UnableToFindCurrencyExchangeRateForUsdRuntimeException::new);
+    }
 
     private CurrencyExchangeRate[] buildWebClient() {
         return webClientBuilder.build()
@@ -26,14 +36,6 @@ public class CurrencyExchangeRateServiceImpl implements CurrencyExchangeRateServ
                 .block();
     }
 
-    @Override
-    public String getUsdBuyingRate() {
-        return Arrays.stream(this.buildWebClient())
-                .filter(cER -> cER.getDrzava().equals(SAD))
-                .map(CurrencyExchangeRate::getKupovni_tecaj)
-                .findFirst()
-                .orElseThrow(UnableToFindCurrencyExchangeRateForUsdRuntimeException::new);
 
-    }
 
 }

@@ -14,6 +14,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -29,10 +30,11 @@ public class ProductServiceImpl implements ProductService {
     private final CurrencyExchangeRateService currencyExchangeRateService;
 
     private final ModelMapper modelMapper;
+    private final WebClient.Builder webClientBuilder;
 
     @Override
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        return this.productRepository.findAll();
     }
 
     @Override
@@ -54,7 +56,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product updateExistingProduct(final Product productValue, final Long id) {
-        return productRepository.findById(id)
+        return this.productRepository.findById(id)
                 .map(existingProduct -> {
                     existingProduct.setCode(productValue.getCode());
                     existingProduct.setName(productValue.getName());
@@ -102,19 +104,43 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product convertToEntity(final ProductDto productDto) {
-        return modelMapper.map(productDto, Product.class);
+        return this.modelMapper.map(productDto, Product.class);
     }
 
     @Override
     public ProductDto convertToDto(final Product product) {
-        return modelMapper.map(product, ProductDto.class);
+        return this.modelMapper.map(product, ProductDto.class);
     }
 
     private Product saveProduct(final Product product) {
-        if (!productRepository.existsAllByCodeAndIdIsNotLike(product).isEmpty()) {
+        final Product productToSave;
+        if (!this.productRepository.existsAllByCodeAndIdIsNotLike(product).isEmpty()) {
             throw new ProductExistsByCodeRuntimeException(product);
         }
-        return this.productRepository.save(this.buildProductWithUsdCurrency(product));
+        productToSave = this.isProductBuildAsWebClient(product);
+        return this.productRepository.save(productToSave);
+    }
+
+    private Product isProductBuildAsWebClient(final Product product) {
+        final Product productToSave;
+        if (this.webClientBuilder != null) {
+            productToSave = this.buildProductWithUsdCurrency(product);
+        } else {
+            productToSave = this.buildProductWithUsdCurrencyWithoutWebClient(product);
+        }
+        return productToSave;
+    }
+
+    private Product buildProductWithUsdCurrencyWithoutWebClient(final Product product) {
+        return Product.builder()
+                .id(product.getId())
+                .code(this.getCodeWithTenCharacters(product))
+                .name(product.getName())
+                .priceEur(this.getPriceInEurBiggerThanZero(product.getPriceEur()))
+                .priceUsd(this.getPriceInEurBiggerThanZero(product.getPriceUsd()))
+                .description(product.getDescription())
+                .isAvailable(product.getIsAvailable())
+                .build();
     }
 
     private Product buildProductWithUsdCurrency(final Product product) {

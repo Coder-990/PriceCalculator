@@ -4,7 +4,8 @@ public class Constants {
     private Constants() {
         throw new IllegalStateException("Utility class");
     }
-
+    public static final String SAD = "SAD";
+    public static final String HNB_USD_CURRENCY = "https://api.hnb.hr/tecajn-eur/v3?valuta=USD";
     public static final String EMPTY_LIST = "Product list is empty, store some data!";
     public static final String INITIALIZED_SUCCESSFULLY = "initialized successfully";
     public static final String UPDATED_SUCCESSFULLY = "updated successfully";
